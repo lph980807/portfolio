@@ -72,19 +72,10 @@
 
   const container = overlay.querySelector('.reflective-card-container');
 
-  // Start webcam
-  const video = document.getElementById('reflective-webcam');
-  if (video) {
-    navigator.mediaDevices.getUserMedia({
-      video: { width: { ideal: 640 }, height: { ideal: 480 }, facingMode: 'user' }
-    }).then(stream => {
-      video.srcObject = stream;
-    }).catch(() => {
-      // Fallback: black background with gradient
-      video.style.display = 'none';
-      container.style.background = 'linear-gradient(135deg, #1a1a2e, #16213e, #0f3460)';
-    });
-  }
+  // Static background (no webcam)
+  const video = overlay.querySelector('.reflective-video-bg');
+  if (video) video.remove();
+  container.style.background = 'linear-gradient(135deg, #1a1a2e, #16213e, #0f3460)';
 
   // Init TargetCursor
   const gsap = window.gsap;
@@ -166,9 +157,6 @@
 
   // Click to enter → main site
   container.addEventListener('click', (e) => {
-    if (video && video.srcObject) {
-      video.srcObject.getTracks().forEach(t => t.stop());
-    }
     overlay.style.transition = 'opacity 0.4s ease';
     overlay.style.opacity = '0';
     setTimeout(() => {
