@@ -1,0 +1,197 @@
+.nav nav {
+  gap: clamp(14px, 2.1vw, 28px);
+}
+
+.nav-icon-link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.app-icon {
+  display: inline-block;
+  flex: 0 0 auto;
+  width: 19px;
+  height: 19px;
+}
+
+.app-icon-instagram {
+  position: relative;
+  border-radius: 6px;
+  background: radial-gradient(circle at 30% 105%, #feda75 0 24%, #fa7e1e 31%, #d62976 48%, #962fbf 68%, #4f5bd5 100%);
+  box-shadow: inset 0 0 0 1.8px #fff, 0 0 18px rgba(214, 41, 118, .22);
+}
+
+.app-icon-instagram::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1.9px solid #fff;
+  border-radius: 50%;
+}
+
+.app-icon-instagram::after {
+  content: "";
+  position: absolute;
+  top: 4.4px;
+  right: 4.4px;
+  width: 3.2px;
+  height: 3.2px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.app-icon-github {
+  color: var(--text);
+  background-color: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23000' d='M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.05c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.08 1.85 1.24 1.85 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.43 11.43 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.49 5.93.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23000' d='M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.05c-3.34.73-4.04-1.42-4.04-1.42-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.08 1.85 1.24 1.85 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.43 11.43 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.49 5.93.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.typewriter {
+  min-height: 3.8em;
+}
+
+.typewriter.is-typing::after {
+  content: "_";
+  display: inline-block;
+  margin-left: .18em;
+  color: var(--accent);
+  opacity: .9;
+}
+
+.typewriter.typing-done::after {
+  content: "";
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid rgba(143, 167, 203, .22);
+  background: rgba(8, 13, 20, .42);
+  color: var(--text);
+  text-decoration: none;
+  backdrop-filter: blur(12px);
+  transition: border-color .25s ease, background .25s ease, transform .25s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-2px);
+  border-color: rgba(187, 255, 98, .62);
+  background: rgba(13, 22, 33, .72);
+}
+
+.social-links b {
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .12em;
+}
+
+.social-links strong {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .08em;
+}
+
+.hero-photo {
+  overflow: hidden;
+  background: #080d14;
+  width: min(360px, 100%);
+  height: min(460px, 68vh);
+  min-height: 0;
+  justify-self: end;
+}
+
+.profile-photo,
+.photo-shade {
+  position: absolute;
+  inset: 0;
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 46% 58%;
+  filter: saturate(.9) contrast(1.04) brightness(1.06);
+  z-index: 0;
+}
+
+.photo-shade {
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(5, 8, 12, .42), rgba(5, 8, 12, .04) 48%, rgba(5, 8, 12, .34)),
+    linear-gradient(180deg, rgba(7, 9, 13, .04), rgba(7, 9, 13, .46));
+}
+
+.hero-photo::before,
+.hero-photo::after,
+.hero-photo .coordinate {
+  z-index: 2;
+}
+
+.hero-photo .orbit,
+.hero-photo .core,
+.hero-photo .data-tag {
+  display: none;
+}
+
+.portrait-label,
+.portrait-caption {
+  position: absolute;
+  z-index: 3;
+  margin: 0;
+  font-family: var(--mono);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.portrait-label {
+  left: clamp(20px, 4vw, 38px);
+  bottom: clamp(54px, 8vw, 74px);
+  color: var(--text);
+  font-size: 13px;
+}
+
+.portrait-label span {
+  display: block;
+  margin-top: 9px;
+  color: var(--accent);
+  font-size: 11px;
+}
+
+.portrait-caption {
+  left: clamp(20px, 4vw, 38px);
+  right: clamp(20px, 4vw, 38px);
+  bottom: clamp(22px, 4vw, 34px);
+  color: var(--muted);
+  font-size: 11px;
+}
+
+@media (max-width: 760px) {
+  .social-links {
+    margin-top: 18px;
+  }
+
+  .social-links a {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .hero-photo {
+    width: min(310px, 100%);
+    height: 390px;
+    min-height: 0;
+    justify-self: center;
+  }
+}
