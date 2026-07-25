@@ -158,13 +158,3 @@ if (typewriter) {
 
   staggerObserver.observe(recordsSection);
 })();
-
-// Visitor counter
-(function() {
-  const el = document.getElementById('visitor-count');
-  if (!el) return;
-  let count = parseInt(localStorage.getItem('portfolio_visits') || '0', 10);
-  count += 1;
-  localStorage.setItem('portfolio_visits', count);
-  el.textContent = '訪客 ' + count + ' 次';
-})();
